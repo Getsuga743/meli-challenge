@@ -1,0 +1,21 @@
+@mixin for-size($size) {
+    @if $size == phone-only {
+        @media (max-width: 599px) {
+            @content;
+        }
+    } @else if $size == tablet {
+        @media (min-width: 600px) {
+            @content;
+        }
+    } @else if $size == desktop-up {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    }
+}
+
+@include flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

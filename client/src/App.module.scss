@@ -1,0 +1,8 @@
+@import './styles/variables';
+
+.container {
+    color: $grey;
+    background-color: $light-yellow;
+    font-family: $font;
+    font-size: 5rem;
+}

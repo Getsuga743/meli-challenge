@@ -1,0 +1,19 @@
+@import 'variables';
+
+@import 'mixins';
+
+@import 'reset';
+
+@import 'base';
+
+@font-face {
+    font-family: $font, -apple-system, Arial, sans-serif, sans-serif;
+    src: url('../assets/fonts/Roboto-Bold.ttf');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: $font, -apple-system, Arial, sans-serif, sans-serif;
+    src: url('../assets/fonts/Roboto-Regular.ttf');
+    font-weight: 400;
+}
