@@ -1,13 +1,8 @@
 import React from 'react';
+import { Layout } from './components/Layout';
 
-import styles from './App.module.scss';
-
-const App = () => {
-    return (
-        <div className={styles.container}>
-            <p>Hello World</p>
-        </div>
-    );
+const App = ({ children }) => {
+    return <Layout>{children}</Layout>;
 };
 
 export default App;

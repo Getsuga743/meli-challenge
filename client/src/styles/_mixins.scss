@@ -1,3 +1,19 @@
+@use 'sass:map';
+
+@use 'variables' as v;
+
+@mixin col($color) {
+    color: map.get(v.$colors, $color);
+}
+
+@mixin bg($color) {
+    background-color: map.get(v.$colors, $color);
+}
+
+@mixin brColor($color) {
+    border-color: map.get(v.$colors, $color);
+}
+
 @mixin for-size($size) {
     @if $size == phone-only {
         @media (max-width: 599px) {
@@ -12,10 +28,4 @@
             @content;
         }
     }
-}
-
-@include flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }

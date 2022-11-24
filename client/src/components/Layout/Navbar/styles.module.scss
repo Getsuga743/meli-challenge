@@ -1,0 +1,16 @@
+@use 'styles/mixins' as *;
+
+.container {
+    @include bg('yellow');
+    height: 10rem;
+    font-size: 1rem;
+}
+
+.logo {
+    width: 13.4rem;
+    height: 3.5rem;
+    background-image: url('../../../assets/images/logo__large.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}

@@ -1,15 +1,21 @@
-$light-yellow: #fff159;
-
-$grey: #333;
-
-$light-grey: #eee;
-$light-grey: #ededed;
-
-$dark-blue: #1f4e96;
-$medium-blue: #3483fa;
+$yellow: #ffe600;
+$gray-d: #333333;
+$gray-m: #999999;
+$gray-l: #eeeeee;
+$blue: #3483fa;
+$dark-blue: #2968c8;
 $light-blue: rgba(65, 137, 230, 0.15);
+$white: #fefefe;
 
-$white: #fff;
-$black: #000;
+$colors: (
+    'yellow': $yellow,
+    'gray-d': $gray-d,
+    'gray-m': $gray-m,
+    'gray-l': $gray-l,
+    'blue': $blue,
+    'dark-blue': $dark-blue,
+    'light-blue': $light-blue,
+    'white': $white,
+);
 
 $font: 'Roboto', sans-serif; ;

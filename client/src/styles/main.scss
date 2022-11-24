@@ -1,10 +1,10 @@
-@import 'variables';
+@use 'reset';
 
-@import 'mixins';
+@use 'variables' as *;
 
-@import 'reset';
+@use 'mixins';
 
-@import 'base';
+@use 'base';
 
 @font-face {
     font-family: $font, -apple-system, Arial, sans-serif, sans-serif;

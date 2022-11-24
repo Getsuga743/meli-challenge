@@ -1,0 +1,8 @@
+@use 'styles/mixins' as *;
+
+.root {
+    .container {
+        min-height: calc(100vh - 10.5rem);
+        width: 100%;
+    }
+}

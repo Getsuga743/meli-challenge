@@ -10,7 +10,7 @@ module.exports = {
     env: {
         es2021: true,
         node: true,
-        'jest/globals': true,
+        browser: true,
     },
     rules: {
         'no-console': 'error',

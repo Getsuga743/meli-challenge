@@ -1,0 +1,11 @@
+@use 'styles/mixins' as *;
+.footer {
+    @include bg('yellow');
+    height: 4rem;
+    display: grid;
+    place-items: center;
+
+    p {
+        font-size: 1rem;
+    }
+}

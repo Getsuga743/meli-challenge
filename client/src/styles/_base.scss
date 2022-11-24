@@ -1,3 +1,6 @@
+@use 'styles/mixins' as *;
+@use 'styles/variables' as *;
+
 *,
 *:after,
 *:before {
@@ -6,13 +9,14 @@
     box-sizing: inherit;
 }
 html {
-    //define 1 rem size
+    //define 1 rem = 16px
     font-size: 62.5%;
 }
+
 body {
+    @include bg('gray-l');
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: apple-system, Helvetica, Roboto, Arial, sans-serif;
+    font-display: optional;
     font-size: 1.6rem;
-    color: $grey;
-    background-color: $light-grey;
 }
