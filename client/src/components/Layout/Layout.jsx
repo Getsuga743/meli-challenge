@@ -1,8 +1,8 @@
 import React, { Suspense } from 'react';
 import styles from './styles.module.scss';
-import { Navbar, Footer } from '../../Layout';
+import { Navbar, Footer } from 'components/organisms';
 
-export const Layout = ({ children, seo }) => {
+export const Layout = ({ children }) => {
     return (
         <>
             <Navbar />
@@ -22,7 +22,7 @@ export const Layout = ({ children, seo }) => {
                 }
             >
                 <main className={styles.root}>
-                    <div className={styles.container}>{children}</div>
+                    <div className={styles.content}>{children}</div>
                 </main>
             </Suspense>
             <Footer />

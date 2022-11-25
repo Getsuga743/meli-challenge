@@ -1,11 +1,14 @@
 @use 'styles/mixins' as *;
+@use 'styles/variables' as *;
+
+
 .footer {
     @include bg('yellow');
-    height: 4rem;
+    height: $footer-height;
     display: grid;
     place-items: center;
+}
 
-    p {
-        font-size: 1rem;
-    }
+.container {
+    @include container();
 }

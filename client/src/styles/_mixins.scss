@@ -2,6 +2,19 @@
 
 @use 'variables' as v;
 
+@mixin flex($direction: row, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin container($width: 1200px) {
+    margin: auto;
+    max-width: $width;
+    padding: 0 2rem;
+}
+
 @mixin col($color) {
     color: map.get(v.$colors, $color);
 }
@@ -14,16 +27,21 @@
     border-color: map.get(v.$colors, $color);
 }
 
+
 @mixin for-size($size) {
-    @if $size == phone-only {
+    @if $size == map.get(v.$breakpoints, 'phone-only') {
         @media (max-width: 599px) {
             @content;
         }
-    } @else if $size == tablet {
+    } @else if $size == map.get(v.$breakpoints, 'tablet') {
         @media (min-width: 600px) {
             @content;
         }
-    } @else if $size == desktop-up {
+    } @else if $size == map.get(v.$breakpoints, 'desktop-up') {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    } @else if $size == map.get(v.$breakpoints, 'desktop-down'){
         @media (min-width: 1200px) {
             @content;
         }

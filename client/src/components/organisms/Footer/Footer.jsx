@@ -1,10 +1,12 @@
 import React from 'react';
 import styles from './styles.module.scss';
-
+import { Text } from 'components/atoms';
 export const Footer = () => {
     return (
         <footer className={styles.footer}>
-            <p>Meli challenge - Ivan Maier Gallardo</p>
+            <div className={styles.container}>
+                <Text>Meli challenge - Ivan Maier Gallardo</Text>
+            </div>
         </footer>
     );
 };

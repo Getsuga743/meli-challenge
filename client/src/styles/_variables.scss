@@ -1,4 +1,4 @@
-$yellow: #ffe600;
+$yellow: #fff159;
 $gray-d: #333333;
 $gray-m: #999999;
 $gray-l: #eeeeee;
@@ -6,6 +6,7 @@ $blue: #3483fa;
 $dark-blue: #2968c8;
 $light-blue: rgba(65, 137, 230, 0.15);
 $white: #fefefe;
+$black: rgba(0,0,0,.9);
 
 $colors: (
     'yellow': $yellow,
@@ -16,6 +17,18 @@ $colors: (
     'dark-blue': $dark-blue,
     'light-blue': $light-blue,
     'white': $white,
+    'black': $black,
 );
 
-$font: 'Roboto', sans-serif; ;
+$font: 'Roboto', sans-serif;
+
+
+$navbar-height: 5rem;
+$footer-height: 5rem;
+
+$breakpoints: (
+    'phone-only': 599px,
+    'tablet': 600px,
+    'desktop-up': 1200px,
+    'desktop-down': 1200px,
+);

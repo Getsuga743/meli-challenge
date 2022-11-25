@@ -1,9 +1,16 @@
 @use 'styles/mixins' as *;
+@use 'styles/variables' as *;
+
+.root {
+    @include flex(row, space-between, center);
+    @include bg('yellow');
+    height: $navbar-height;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+}
 
 .container {
-    @include bg('yellow');
-    height: 10rem;
-    font-size: 1rem;
+    @include flex(row, space-between, center);
+    @include container(1200px);
 }
 
 .logo {
