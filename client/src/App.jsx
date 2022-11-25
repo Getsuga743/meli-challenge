@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Layout } from './components/Layout';
+import { Layout } from './components/organisms';
 
 const App = ({ children }) => {
     return <Layout>{children}</Layout>;

@@ -1,4 +1,3 @@
-import { DataCard } from './DataCard/DataCard';
-import Row from './Row/Row';
-
-export { DataCard, Row };
+import { ProductCard } from './ProductCard/ProductCard';
+import { ProfileCard } from './ProfileCard/ProfileCard';
+export { ProductCard, ProfileCard };

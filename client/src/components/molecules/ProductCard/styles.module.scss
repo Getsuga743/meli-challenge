@@ -1,0 +1,67 @@
+@use 'styles/mixins' as *;
+
+.container {
+    @include flex(column, center, center);
+    @include bg('white');
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 15%);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    width: 100%;
+    margin-bottom: 2rem;
+    @include for-size('phone-only') {
+        @include flex(column, flex-start, flex-start);
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 10rem 2fr 1fr;
+    grid-template-rows: 10rem;
+    grid-template-areas: 'image text button';
+    padding: 2rem;
+    width: 100%;
+    @include for-size('phone-only') {
+        max-width: 300px;
+        margin: auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: 15rem auto 5rem;
+        grid-template-areas: 'image' 'text' 'button';
+    }
+}
+
+.header {
+    @include flex(column, flex-start, flex-start);
+    width: 100%;
+    @include brColor('gray-l');
+    border-style: solid;
+    border-bottom-width: 1px;
+    padding: 1rem 2rem;
+}
+
+.image {
+    grid-area: image;
+}
+
+.text {
+    grid-area: text;
+    margin-left: 1rem;
+    @include flex(column, space-between, flex-start);
+
+    @include for-size('phone-only') {
+        margin: 2rem 0;
+        text-align: center;
+        @include flex(column, space-between, center);
+    }
+}
+
+.button {
+    padding-bottom: 1rem;
+    grid-area: button;
+    width: 20rem;
+    margin: 0 auto;
+    align-self: start;
+    justify-content: flex-end;
+    @include for-size('phone-only') {
+        align-self: end;
+    }
+}

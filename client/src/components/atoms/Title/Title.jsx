@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import classNames from 'classnames';
+import classnames from 'classnames';
 import styles from './styles.module.scss';
 
 export const Title = ({
@@ -8,8 +8,9 @@ export const Title = ({
     size = 'medium',
     type = 'h2',
     color = 'primary',
+    className,
 }) => {
-    const titleClass = classNames({
+    const titleClass = classnames(className, {
         [styles.common]: true,
         [styles.primary]: color === 'primary',
         [styles.secondary]: color === 'secondary',
@@ -31,8 +32,9 @@ export const Title = ({
 };
 
 Title.propTypes = {
-    children: PropTypes.element,
+    children: PropTypes.node,
     color: PropTypes.string,
     size: PropTypes.string,
     type: PropTypes.string,
+    className: PropTypes.string,
 };

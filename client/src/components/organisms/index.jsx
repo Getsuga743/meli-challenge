@@ -1,5 +1,5 @@
 import { Navbar } from './Navbar/Navbar';
 import { Footer } from './Footer/Footer';
-import { DataSection } from './DataSection/DataSection';
-
-export { Footer, Navbar, DataSection };
+import { Layout } from './Layout/Layout';
+import { Pagination } from './Pagination/Pagination';
+export { Footer, Navbar, Layout, Pagination };

@@ -1,24 +1,28 @@
 import React from 'react';
-import { DataSection } from 'components/organisms';
 
 import styles from './styles.module.scss';
-import { DataCard } from 'components/molecules/DataCard/DataCard';
+import { ProfileCard, ProductCard } from 'components/molecules';
+import { Pagination } from 'components/organisms';
 import { Title } from 'components/atoms';
 
 export const Profile = () => {
     return (
-        <div className={styles.root}>
-            <div className={styles.mainTitle}>
-                <Title type="h1" size="large">
-                    Mi perfil
-                </Title>
+        <>
+            <div className={styles.sectionProfile}>
+                <ProfileCard fullName="ivan" level="oro" />
             </div>
-            <DataSection title="Información general" data={<DataCard />} />
-            <div className={styles.mainTitle}>
-                <Title type="h2" size="medium">
-                    Mis compras
-                </Title>
+            <div className={styles.sectionProducts}>
+                <div className={styles.sectionHeader}>
+                    <Title>Mis compras</Title>
+                </div>
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <div className={styles.paginationContainer}>
+                    <Pagination />
+                </div>
             </div>
-        </div>
+        </>
     );
 };

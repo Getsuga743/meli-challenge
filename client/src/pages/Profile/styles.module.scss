@@ -1,14 +1,27 @@
 @use 'styles/mixins' as *;
+@use 'styles/variables' as *;
 
-.root {
-    @include flex(column);
+.sectionProfile {
+    @include flex(column, space-between, center);
     width: 100%;
-    height: 100%;
-    margin-top: 0.5rem;
+    margin: 2rem 0rem;
 }
 
-.mainTitle {
-    @include flex(row, space-between);
+.sectionHeader {
+    @include flex(row, space-between, center);
     width: 100%;
-    margin: 0 0 3rem 0;
+    margin-bottom: 1rem;
+}
+
+.sectionProducts {
+    @include flex(column, flex-start, center);
+    width: 100%;
+    margin-bottom: 1rem;
+    flex: 1;
+}
+
+.paginationContainer {
+    @include flex(column, center, center);
+
+    margin-top: auto;
 }

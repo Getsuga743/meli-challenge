@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { Suspense } from 'react';
 import styles from './styles.module.scss';
 import { Navbar, Footer } from 'components/organisms';
@@ -29,3 +30,7 @@ export const Layout = ({ children }) => {
         </>
     );
 };
+
+Layout.propTypes = {
+  children: PropTypes.element
+}

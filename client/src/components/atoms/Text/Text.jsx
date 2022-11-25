@@ -1,10 +1,17 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './styles.module.scss';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
-export const Text = ({ children, size, color = 'dark', type = 'p' }) => {
-    const textClass = classNames({
+export const Text = ({
+    className,
+    children,
+    size,
+    color = 'medium',
+    type = 'p',
+    weight = 'regular',
+}) => {
+    const textClass = classnames(className, {
         [styles.common]: true,
         [styles.dark]: color === 'dark',
         [styles.medium]: color === 'medium',
@@ -12,6 +19,8 @@ export const Text = ({ children, size, color = 'dark', type = 'p' }) => {
         [styles.sizeLarge]: size === 'large',
         [styles.sizeMedium]: size === 'medium',
         [styles.sizeSmall]: size === 'small',
+        [styles.sizeXSmall]: size === 'xsmall',
+        [styles.bold]: weight === 'bold',
     });
 
     if (type === 'p') {
@@ -24,8 +33,10 @@ export const Text = ({ children, size, color = 'dark', type = 'p' }) => {
 };
 
 Text.propTypes = {
-    children: PropTypes.element,
+    children: PropTypes.node,
     color: PropTypes.string,
     size: PropTypes.string,
     type: PropTypes.string,
+    className: PropTypes.string,
+    weight: PropTypes.string,
 };

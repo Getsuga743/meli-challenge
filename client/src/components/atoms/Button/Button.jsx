@@ -2,23 +2,51 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './styles.module.scss';
 import classnames from 'classnames';
+import { Link } from 'react-router-dom';
 
-export const Button = ({ variant, text, onClick }) => {
-    const buttonClass = classnames({
-        [styles.button]: true,
-        [styles.primary]: variant === 'primary',
-        [styles.secondary]: variant === 'secondary',
-    });
+export const Button = ({
+    className,
+    variant = 'primary',
+    link = null,
+    onClick,
+    children,
+    ...props
+}) => {
+    const handleOnClick = (e) => {
+        if (onClick) {
+            onClick(e);
+        }
+    };
+    let buttonClass;
+    if (variant !== 'none') {
+        buttonClass = classnames(className, {
+            [styles.button]: true,
+            [styles.primary]: variant === 'primary',
+            [styles.secondary]: variant === 'secondary',
+            [styles.link]: variant === 'link',
+            [styles.outlined] : variant === 'outlined',
+        });
+    }
+
+    if (link) {
+        return (
+            <Link href={link} className={buttonClass} {...props}>
+                {children}
+            </Link>
+        );
+    }
 
     return (
-        <div className={buttonClass} onClick={onClick}>
-            <p>{text}</p>
-        </div>
+        <button className={buttonClass} onClick={handleOnClick} {...props}>
+            {children}
+        </button>
     );
 };
 
 Button.propTypes = {
-    onClick: PropTypes.any,
-    text: PropTypes.any,
+    children: PropTypes.element,
+    link: PropTypes.string,
+    onClick: PropTypes.func,
     variant: PropTypes.string,
+    className: PropTypes.string,
 };
