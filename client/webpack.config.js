@@ -82,7 +82,6 @@ module.exports = {
         hot: true,
         port: process.env.PORT,
         open: true,
-        historyApiFallback: true,
         historyApiFallback: {
             disableDotRule: true,
         },

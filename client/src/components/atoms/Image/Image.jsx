@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 
@@ -17,7 +17,7 @@ export const Image = ({ src, variant, alt }) => {
 };
 
 Image.propTypes = {
-  alt: PropTypes.string,
-  src: PropTypes.string,
-  variant: PropTypes.any
-}
+    alt: PropTypes.string,
+    src: PropTypes.string,
+    variant: PropTypes.any,
+};

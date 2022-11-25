@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 module.exports = {
-    plugins: ['jest,react'],
+    plugins: ['react'],
     root: true,
     parserOptions: {
         ecmaVersion: 12,

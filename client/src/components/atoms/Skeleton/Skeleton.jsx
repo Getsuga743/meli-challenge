@@ -13,4 +13,6 @@ export const Skeleton = ({ size }) => {
     return <div className={skeletonClass} />;
 };
 
-Skeleton.propTypes = { size };
+Skeleton.propTypes = {
+    size: PropTypes.string,
+};

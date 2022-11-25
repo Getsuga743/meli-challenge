@@ -8,8 +8,8 @@
 }
 
 .titleContainer {
-    @include flex(row,flex-start);
+    @include flex(row, flex-start);
     background-color: bg('gray-m');
     width: 100%;
-    margin:auto;
+    margin: auto;
 }

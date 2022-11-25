@@ -1,8 +1,14 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import styles from './styles.module.scss';
 
-export const Title = ({ children, size = 'medium', type = 'h2', color = 'primary' }) => {
+export const Title = ({
+    children,
+    size = 'medium',
+    type = 'h2',
+    color = 'primary',
+}) => {
     const titleClass = classNames({
         [styles.common]: true,
         [styles.primary]: color === 'primary',
@@ -22,4 +28,11 @@ export const Title = ({ children, size = 'medium', type = 'h2', color = 'primary
     if (type === 'h3') {
         return <h3 className={titleClass}>{children}</h3>;
     }
+};
+
+Title.propTypes = {
+    children: PropTypes.element,
+    color: PropTypes.string,
+    size: PropTypes.string,
+    type: PropTypes.string,
 };

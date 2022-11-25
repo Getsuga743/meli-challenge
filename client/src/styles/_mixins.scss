@@ -27,7 +27,6 @@
     border-color: map.get(v.$colors, $color);
 }
 
-
 @mixin for-size($size) {
     @if $size == map.get(v.$breakpoints, 'phone-only') {
         @media (max-width: 599px) {
@@ -41,7 +40,7 @@
         @media (min-width: 1200px) {
             @content;
         }
-    } @else if $size == map.get(v.$breakpoints, 'desktop-down'){
+    } @else if $size == map.get(v.$breakpoints, 'desktop-down') {
         @media (min-width: 1200px) {
             @content;
         }

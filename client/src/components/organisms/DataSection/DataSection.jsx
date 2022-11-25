@@ -1,7 +1,6 @@
-import PropTypes from "prop-types"
+import PropTypes from 'prop-types';
 import React from 'react';
 import { Title } from 'components/atoms';
-import { DataCard } from 'components/molecules';
 
 import styles from './styles.module.scss';
 
@@ -19,6 +18,6 @@ export const DataSection = ({ title, data }) => {
 };
 
 DataSection.propTypes = {
-  data: PropTypes.element,
-  title: PropTypes.string
-}
+    data: PropTypes.element,
+    title: PropTypes.string,
+};

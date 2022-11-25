@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './styles.module.scss';
 import classnames from 'classnames';
@@ -18,7 +18,7 @@ export const Button = ({ variant, text, onClick }) => {
 };
 
 Button.propTypes = {
-  onClick: PropTypes.any,
-  text: PropTypes.any,
-  variant: PropTypes.string
-}
+    onClick: PropTypes.any,
+    text: PropTypes.any,
+    variant: PropTypes.string,
+};

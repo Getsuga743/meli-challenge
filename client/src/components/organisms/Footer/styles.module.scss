@@ -1,7 +1,6 @@
 @use 'styles/mixins' as *;
 @use 'styles/variables' as *;
 
-
 .footer {
     @include bg('yellow');
     height: $footer-height;
