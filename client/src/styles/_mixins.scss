@@ -28,19 +28,19 @@
 }
 
 @mixin for-size($size) {
-    @if $size == map.get(v.$breakpoints, 'phone-only') {
+    @if $size == 'phone-only' {
         @media (max-width: 599px) {
             @content;
         }
-    } @else if $size == map.get(v.$breakpoints, 'tablet') {
+    } @else if $size == 'tablet' {
         @media (min-width: 600px) {
             @content;
         }
-    } @else if $size == map.get(v.$breakpoints, 'desktop-up') {
+    } @else if $size == 'desktop-up' {
         @media (min-width: 1200px) {
             @content;
         }
-    } @else if $size == map.get(v.$breakpoints, 'desktop-down') {
+    } @else if $size == 'desktop-down' {
         @media (min-width: 1200px) {
             @content;
         }
