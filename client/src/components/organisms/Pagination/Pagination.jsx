@@ -8,42 +8,39 @@ export const Pagination = (props) => {
     return (
         <nav className={styles.container}>
             <ul className={styles.list}>
-                <li className={classNames(styles.item, styles.backButton)}>
+                <li className={classNames(styles.item, styles.sideButton)}>
                     <Button variant="outlined">
                         <Text variant="primary" color="dark">
-                            &lt; Anterior
+                             Anterior
                         </Text>
                     </Button>
                 </li>
                 <li className={classNames(styles.item, styles.pageButton)}>
-                    <Button variant="link" link="a">
-                        <Text size="large" color="dark">
+                    <Button variant="link" link="" size="medium">
+                        <Text color="dark">
                             1
                         </Text>
                     </Button>
                 </li>
                 <li className={classNames(styles.item, styles.pageButton)}>
-                    <Button variant="link" link="a">
-                        <Text size="small">2</Text>
+                    <Button variant="link" link="a" size="medium">
+                        2
                     </Button>
                 </li>
                 <li className={classNames(styles.item, styles.pageButton)}>
-                    <Button variant="link" link="a">
-                        <Text variant="primary" size="small">
-                            3
-                        </Text>
+                    <Button variant="link" link="a" size="medium">
+                        3
                     </Button>
                 </li>
-                <li className={classNames(styles.item)}>
+                <li className={classNames(styles.item, styles.sideButton)}>
                     <Button variant="outlined" link="">
-                        <Text color="dark">Siguiente &gt;</Text>
+                        <Text color="dark">Siguiente</Text>
                     </Button>
                 </li>
             </ul>
         </nav>
     );
 };
-//html '<' sy
 
 Pagination.propTypes = {};
 

@@ -2,17 +2,24 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Image, Title, Text, Button } from 'components/atoms';
 import styles from './styles.module.scss';
+import { Card } from 'components/atoms';
 
 // Listado de compras, con id de compra, título del ítem, precio, cantidad y fecha
 // de compra, y una forma para ver el detalle de esa compra
 export const ProductCard = () => {
     return (
-        <div className={styles.container}>
+        <Card className={styles.container}>
             <div className={styles.header}>
                 <Text type="span" color="dark" weight="bold">
                     01/01/2021
                 </Text>
-                <Text type="span" size="xsmall" color="medium" weight='bold' className='pt-2'>
+                <Text
+                    type="span"
+                    size="xsmall"
+                    color="medium"
+                    weight="bold"
+                    className="pt-2"
+                >
                     #123456
                 </Text>
             </div>
@@ -34,10 +41,12 @@ export const ProductCard = () => {
                     <Text size="medium">cantidad: 1</Text>
                 </div>
                 <div className={styles.button}>
-                    <Button>Ver detalle</Button>
+                    <Button size="small" link="/products/detail/">
+                        <Text size='small' color='light'>Ver detalle</Text>
+                    </Button>
                 </div>
             </div>
-        </div>
+        </Card>
     );
 };
 

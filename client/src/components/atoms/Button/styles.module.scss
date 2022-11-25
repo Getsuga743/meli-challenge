@@ -5,12 +5,13 @@
     color: #fff;
     border: none;
     border-radius: 5px;
-    padding: 10px 20px;
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.1s ease-in-out;
-    width: 100%;
     font-size: 1.5rem;
+    @include for-size('phone-only') {
+        padding: 10px;
+    }
 }
 
 .primary {
@@ -29,11 +30,26 @@
 }
 
 .outlined {
-    @include bg('white');
-    border: 1px solid col('blue');
-   
+    background-color: transparent;
+    @include brColor('gray-m');
+    border-width: 1px;
+    border-style: solid;
 
     &:hover {
         @include bg('light-blue');
     }
+}
+
+.full {
+    width: 100%;
+}
+
+.small {
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+.medium {
+    padding: 10px 20px;
+    font-size: 1.5rem;
 }

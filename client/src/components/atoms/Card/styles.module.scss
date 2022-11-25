@@ -1,0 +1,7 @@
+@use 'styles/mixins' as *;
+.card {
+    @include bg('white');
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 15%);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+}

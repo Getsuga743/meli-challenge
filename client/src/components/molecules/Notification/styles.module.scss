@@ -1,0 +1,11 @@
+@use 'styles/mixins' as *;
+
+.notification {
+    @include flex(column, center, center);
+    width: 100%;
+    margin: 2rem 0rem;
+}
+
+.warning {
+   background-color: orangered;
+}

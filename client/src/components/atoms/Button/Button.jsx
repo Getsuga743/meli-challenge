@@ -8,6 +8,7 @@ export const Button = ({
     className,
     variant = 'primary',
     link = null,
+    size = 'medium',
     onClick,
     children,
     ...props
@@ -20,17 +21,20 @@ export const Button = ({
     let buttonClass;
     if (variant !== 'none') {
         buttonClass = classnames(className, {
+            [styles.small]: size === 'small',
+            [styles.medium]: size === 'medium',
+            [styles.full]: size === 'full',
             [styles.button]: true,
             [styles.primary]: variant === 'primary',
             [styles.secondary]: variant === 'secondary',
             [styles.link]: variant === 'link',
-            [styles.outlined] : variant === 'outlined',
+            [styles.outlined]: variant === 'outlined',
         });
     }
 
     if (link) {
         return (
-            <Link href={link} className={buttonClass} {...props}>
+            <Link to={link} className={buttonClass} {...props}>
                 {children}
             </Link>
         );
@@ -44,9 +48,10 @@ export const Button = ({
 };
 
 Button.propTypes = {
-    children: PropTypes.element,
-    link: PropTypes.string,
-    onClick: PropTypes.func,
-    variant: PropTypes.string,
-    className: PropTypes.string,
-};
+  children: PropTypes.element,
+  className: PropTypes.string,
+  link: PropTypes.string,
+  onClick: PropTypes.func,
+  size: PropTypes.string,
+  variant: PropTypes.string
+}

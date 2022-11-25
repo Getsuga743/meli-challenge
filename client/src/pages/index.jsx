@@ -1,4 +1,4 @@
 import { Profile } from './Profile/Profile';
 import { Home } from './Home/Home';
-
-export { Profile, Home };
+import { ProductDetail } from './ProductDetail/ProductDetail';
+export { Profile, Home, ProductDetail };

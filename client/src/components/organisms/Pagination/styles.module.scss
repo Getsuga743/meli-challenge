@@ -7,21 +7,42 @@
 
 .list {
     @include flex(row, center, center);
-    gap: 1rem;
     margin: 0 1rem;
 }
 
 .item {
     @include flex(row, center, center);
+    @include col('gray-d');
     gap: 0.2rem;
-
-    border-radius: 5px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+    width: 3rem;
+}
+
+.active {
+    @include bg('white');
+    @include brColor('gray-m');
+
+    &:hover {
+        @include bg('light-blue');
+    }
 }
 
 .pageButton {
     &:hover {
         @include bg('light-blue');
     }
+}
+
+.sideButton {
+    width: fit-content;
+    margin:0 2rem;
+    @include for-size('phone-only') {
+        margin:0;
+    }
+}
+
+.disabled {
+    @include bg('gray-l');
+    cursor: not-allowed;
 }
