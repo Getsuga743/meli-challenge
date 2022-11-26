@@ -1,0 +1,7 @@
+@use 'styles/mixins' as *;
+
+.header {
+    @include flex(row, flex-start, center);
+    width: 100%;
+    margin: 2rem 0rem;
+}

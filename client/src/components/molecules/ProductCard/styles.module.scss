@@ -31,9 +31,9 @@
     @include brColor('gray-l');
     border-style: solid;
     border-bottom-width: 1px;
-    padding: 1rem 2rem;
+    padding: 2rem 2rem 1rem 2rem;
     @include for-size('phone-only') {
-        @include flex(column, center,center);
+        @include flex(column, center, center);
         padding: 1rem;
     }
 }
@@ -57,11 +57,12 @@
 .button {
     padding-bottom: 1rem;
     grid-area: button;
-    width: 20rem;
+    align-self: flex-end;
+    width: 12rem;
     margin: 0 auto;
     align-self: start;
-    justify-content: flex-end;
     @include for-size('phone-only') {
         align-self: end;
+        width: auto;
     }
 }

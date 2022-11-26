@@ -5,7 +5,7 @@ export const Footer = () => {
     return (
         <footer className={styles.footer}>
             <div className={styles.container}>
-                <Text color='dark'>Meli challenge - Ivan Maier Gallardo</Text>
+                <Text color="dark">Meli challenge - Ivan Maier Gallardo</Text>
             </div>
         </footer>
     );

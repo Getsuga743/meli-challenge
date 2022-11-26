@@ -12,6 +12,7 @@ export const Image = ({ src, size = 'medium', variant, alt }) => {
         [styles.imageMedium]: size === 'medium',
         [styles.imageLarge]: size === 'large',
         [styles.imageFluid]: size === 'fluid',
+        [styles.imageRounded]: variant === 'round',
         [styles.variantProfile]: variant === 'profile',
         [styles.variantProduct]: variant === 'product',
     });

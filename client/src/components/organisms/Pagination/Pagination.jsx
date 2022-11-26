@@ -11,15 +11,13 @@ export const Pagination = (props) => {
                 <li className={classNames(styles.item, styles.sideButton)}>
                     <Button variant="outlined">
                         <Text variant="primary" color="dark">
-                             Anterior
+                            Anterior
                         </Text>
                     </Button>
                 </li>
                 <li className={classNames(styles.item, styles.pageButton)}>
                     <Button variant="link" link="" size="medium">
-                        <Text color="dark">
-                            1
-                        </Text>
+                        <Text color="dark">1</Text>
                     </Button>
                 </li>
                 <li className={classNames(styles.item, styles.pageButton)}>

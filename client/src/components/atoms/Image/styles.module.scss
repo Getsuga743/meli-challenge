@@ -2,6 +2,7 @@
 
 .image {
     object-fit: contain;
+    object-position: center;
 }
 
 .imageSmall {
@@ -22,6 +23,10 @@
 .imageFluid {
     width: 100%;
     height: 100%;
+}
+
+.imageRounded {
+    border-radius: 50%;
 }
 
 .variantProduct {

@@ -11,12 +11,11 @@ const api = axios.create({
     },
 });
 
-
 api.interceptors.response.use(
     (response) => response,
     (error) => {
         const message = getValidationError(error);
-        if(message) {
+        if (message) {
             return Promise.reject(message);
         }
         return Promise.reject(error);

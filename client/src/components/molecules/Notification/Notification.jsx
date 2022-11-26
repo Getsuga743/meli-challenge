@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import React from 'react';
 import styles from './styles.module.scss';
@@ -19,8 +19,8 @@ export const Notification = ({
 };
 
 Notification.propTypes = {
-  notification: PropTypes.shape({
-    message: PropTypes.string,
-    type: PropTypes.string
-  })
-}
+    notification: PropTypes.shape({
+        message: PropTypes.string,
+        type: PropTypes.string,
+    }),
+};

@@ -86,10 +86,6 @@ module.exports = {
         historyApiFallback: {
             disableDotRule: true,
         },
-        proxy: {
-            '/api': 'http://localhost:8000',
-            changeOrigin: true,
-        },
     },
     optimization: {
         splitChunks: {

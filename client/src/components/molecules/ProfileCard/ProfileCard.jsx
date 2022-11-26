@@ -3,29 +3,41 @@ import React from 'react';
 import styles from './styles.module.scss';
 import { Image, Title, Text } from 'components/atoms';
 import { Card } from 'components/atoms';
+import { Skeleton } from 'components/atoms';
 
-export const ProfileCard = ({ fullName, level = null }) => {
+export const ProfileCard = ({ user, isLoading, isError }) => {
+    if (isLoading) {
+        return (
+            <Card className={styles.container}>
+                <div className={styles.imageContainer}>
+                    <Skeleton size="avatar" />
+                </div>
+                <div className={styles.textContainer}>
+                    <div>
+                        <Skeleton size="small" />
+                        <Skeleton size="small" className="my-2" />
+                        <Skeleton size="small" />
+                    </div>
+                </div>
+            </Card>
+        );
+    }
+
+    if (isError) {
+        return <div>Error</div>;
+    }
+
     return (
         <>
             <Card className={styles.container}>
                 <div className={styles.imageContainer}>
-                    <Image
-                        src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.19.1/mercadolibre/180x180.png"
-                        rounded={true}
-                        variant="profile"
-                    />
+                    <Image src={user?.image} rounded={true} variant="profile" />
                 </div>
                 <div className={styles.textContainer}>
                     <div>
                         <Title type="h1" size="large">
-                            {fullName}
+                            {user?.full_name}
                         </Title>
-                        <Text variant="primary">@ivanmaierg</Text>
-                    </div>
-                    <div>
-                        <Text type="span" size="medium">
-                            Nivel - {level}
-                        </Text>
                     </div>
                 </div>
             </Card>
@@ -33,7 +45,4 @@ export const ProfileCard = ({ fullName, level = null }) => {
     );
 };
 
-ProfileCard.propTypes = {
-    fullName: PropTypes.string,
-    level: PropTypes.string,
-};
+ProfileCard.propTypes = {};

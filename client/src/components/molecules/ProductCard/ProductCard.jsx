@@ -41,8 +41,10 @@ export const ProductCard = () => {
                     <Text size="medium">cantidad: 1</Text>
                 </div>
                 <div className={styles.button}>
-                    <Button size="small" link="/products/detail/">
-                        <Text size='small' color='light'>Ver detalle</Text>
+                    <Button size="small" link="/profile/purchases/1">
+                        <Text size="small" color="light">
+                            Ver detalle
+                        </Text>
                     </Button>
                 </div>
             </div>

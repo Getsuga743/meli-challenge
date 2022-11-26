@@ -1,5 +1,5 @@
 import { Notification } from './Notification/Notification';
 import { ProductCard } from './ProductCard/ProductCard';
 import { ProfileCard } from './ProfileCard/ProfileCard';
-
-export { ProductCard, ProfileCard, Notification };
+import { ProductDetail } from './ProductDetail/ProductDetail';
+export { ProductCard, ProfileCard, Notification, ProductDetail };

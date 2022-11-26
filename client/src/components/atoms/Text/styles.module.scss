@@ -4,8 +4,12 @@
     font-weight: 400;
 }
 
-.dark {
+.black {
     @include col('black');
+}
+
+.dark {
+    @include col('gray-d');
 }
 
 .medium {

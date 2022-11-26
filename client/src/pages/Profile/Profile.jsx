@@ -8,7 +8,7 @@ import { useUser } from 'hooks/useUser';
 
 export const Profile = () => {
     const { user, loading, error } = useUser();
-    
+
     return (
         <>
             <div className={styles.sectionProfile}>

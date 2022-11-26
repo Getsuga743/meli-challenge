@@ -1,8 +1,0 @@
-@use 'styles/mixins' as *;
-@use 'styles/variables' as *;
-
-.root {
-    border-radius: 50%;
-    border: 0.5px solid $gray-l;
-    width: 100%;
-}

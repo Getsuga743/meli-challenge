@@ -6,17 +6,23 @@ import styles from './styles.module.scss';
 export const Title = ({
     children,
     size = 'medium',
-    type = 'h2',
-    color = 'primary',
+    type = 'h3',
+    color = 'dark',
     className,
 }) => {
     const titleClass = classnames(className, {
         [styles.common]: true,
-        [styles.primary]: color === 'primary',
-        [styles.secondary]: color === 'secondary',
+        [styles.black]: color === 'black',
+        [styles.dark]: color === 'dark',
+        [styles.medium]: color === 'medium',
+        [styles.light]: color === 'light',
         [styles.sizeLarge]: size === 'large',
         [styles.sizeMedium]: size === 'medium',
     });
+
+    if (!children) {
+        return null;
+    }
 
     if (type === 'h1') {
         return <h1 className={titleClass}>{children}</h1>;
@@ -28,6 +34,10 @@ export const Title = ({
 
     if (type === 'h3') {
         return <h3 className={titleClass}>{children}</h3>;
+    }
+
+    if (type === 'h4') {
+        return <h4 className={titleClass}>{children}</h4>;
     }
 };
 

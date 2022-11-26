@@ -1,0 +1,44 @@
+.skeleton {
+    display: block;
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    height: 100%;
+    width: 100%;
+    animation: pulse 1.5s ease-in-out infinite;
+
+    @keyframes pulse {
+        0% {
+            background-color: #f2f2f2;
+        }
+        50% {
+            background-color: #e6e6e6;
+        }
+        100% {
+            background-color: #f2f2f2;
+        }
+    }
+}
+
+.skeletonSmall {
+    height: 1rem;
+    width: 5rem;
+}
+.skeletonMedium {
+    height: 2rem;
+    width: 10rem;
+}
+.skeletonLarge {
+    height: 3rem;
+    width: 15rem;
+}
+
+.skeletonAvatar {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+}
+
+.skeletonText {
+    height: 1.5rem;
+    width: 100%;
+}

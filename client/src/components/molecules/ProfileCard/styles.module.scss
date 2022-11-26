@@ -12,6 +12,7 @@
 }
 
 .textContainer {
-    @include flex(row, space-between, flex-start);
+    @include flex(row, space-between, flex-end);
     flex: 10;
+    margin-left: 2rem;
 }

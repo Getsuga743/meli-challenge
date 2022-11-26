@@ -2,6 +2,8 @@ $yellow: #fff159;
 $gray-d: #333333;
 $gray-m: #999999;
 $gray-l: #eeeeee;
+$gray-bg: #ededed;
+
 $blue: #3483fa;
 $dark-blue: #2968c8;
 $light-blue: rgba(65, 137, 230, 0.15);
@@ -13,6 +15,7 @@ $colors: (
     'gray-d': $gray-d,
     'gray-m': $gray-m,
     'gray-l': $gray-l,
+    'gray-bg': $gray-bg,
     'blue': $blue,
     'dark-blue': $dark-blue,
     'light-blue': $light-blue,

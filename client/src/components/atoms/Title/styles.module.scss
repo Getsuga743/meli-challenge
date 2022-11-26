@@ -1,21 +1,41 @@
 @use 'styles/mixins' as *;
 
 .common {
-    font-weight: 600;
+    font-weight: 400;
 }
 
-.primary {
+.black {
     @include col('black');
 }
 
-.secondary {
+.dark {
+    @include col('gray-d');
+}
+
+.medium {
     @include col('gray-m');
 }
 
+.light {
+    @include col('gray-l');
+}
+
 .sizeLarge {
-    font-size: 2.4rem;
+    font-size: 2.5rem;
 }
 
 .sizeMedium {
-    font-size: 1.8rem;
+    font-size: 2rem;
+}
+
+.sizeSmall {
+    font-size: 1.6rem;
+}
+
+.sizeXSmall {
+    font-size: 1.2rem;
+}
+
+.bold {
+    font-weight: bold;
 }

@@ -21,12 +21,12 @@ export const Button = ({
     let buttonClass;
     if (variant !== 'none') {
         buttonClass = classnames(className, {
+            [styles.xsmall]: size === 'xsmall',
             [styles.small]: size === 'small',
             [styles.medium]: size === 'medium',
             [styles.full]: size === 'full',
             [styles.button]: true,
             [styles.primary]: variant === 'primary',
-            [styles.secondary]: variant === 'secondary',
             [styles.link]: variant === 'link',
             [styles.outlined]: variant === 'outlined',
         });
@@ -48,10 +48,10 @@ export const Button = ({
 };
 
 Button.propTypes = {
-  children: PropTypes.element,
-  className: PropTypes.string,
-  link: PropTypes.string,
-  onClick: PropTypes.func,
-  size: PropTypes.string,
-  variant: PropTypes.string
-}
+    children: PropTypes.element,
+    className: PropTypes.string,
+    link: PropTypes.string,
+    onClick: PropTypes.func,
+    size: PropTypes.string,
+    variant: PropTypes.string,
+};

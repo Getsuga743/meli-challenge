@@ -6,12 +6,12 @@ export const getUserData = async () => {
 };
 
 export const getUserRestrictions = async (id) => {
-    const {data} = await api.get(`/users/${id}/restrictions`);
+    const { data } = await api.get(`/users/${id}/restrictions`);
     return data;
 };
 
 export const getUserLevels = async (levelId) => {
-    const {data} = await api.get(`/levels/${levelId}`);
+    const { data } = await api.get(`/levels/${levelId}`);
     return data;
 };
 
