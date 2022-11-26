@@ -12,6 +12,7 @@ module.exports = {
             utils: path.resolve(__dirname, 'src/utils/'),
             services: path.resolve(__dirname, 'src/services/'),
             hooks: path.resolve(__dirname, 'src/hooks/'),
+            contexts: path.resolve(__dirname, 'src/contexts/'),
             assets: path.resolve(__dirname, 'src/assets/'),
         },
         extensions: ['.scss', '.js', '.jsx'],
