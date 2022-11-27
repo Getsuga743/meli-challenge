@@ -8,16 +8,15 @@ export const useUser = () => {
     return useContext(userContext);
 };
 
-export const useUserProvider = () => {
+const useGetUserData = () => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
     useEffect(() => {
         const getUser = async () => {
             try {
                 const response = await getUserData();
-                setUser(response.data);
+                setUser(response);
             } catch (error) {
                 setError(error);
             } finally {
@@ -28,7 +27,17 @@ export const useUserProvider = () => {
     }, []);
 
     return {
-        user: user,
+        user,
+        loading,
+        error,
+    };
+};
+
+export const useUserProvider = () => {
+    const { user, loading, error } = useGetUserData();
+    
+    return {
+        user,
         loading,
         error,
     };

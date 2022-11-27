@@ -10,4 +10,5 @@
     @include flex(column, flex-start, center);
     min-height: calc(100vh - #{$navbar-height} - #{$footer-height});
     height: 100%;
+    margin: 2rem;
 }

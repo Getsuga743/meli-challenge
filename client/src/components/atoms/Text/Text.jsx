@@ -11,6 +11,10 @@ export const Text = ({
     type = 'p',
     weight = 'regular',
 }) => {
+    if (!children) {
+        return null;
+    }
+
     const textClass = classnames(className, {
         [styles.common]: true,
         [styles.dark]: color === 'dark',
@@ -24,9 +28,6 @@ export const Text = ({
         [styles.bold]: weight === 'bold',
     });
 
-    if (!children) {
-        return null;
-    }
     if (type === 'p') {
         return <p className={textClass}>{children}</p>;
     }

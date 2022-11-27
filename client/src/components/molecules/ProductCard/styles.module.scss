@@ -57,12 +57,14 @@
 .button {
     padding-bottom: 1rem;
     grid-area: button;
-    align-self: flex-end;
+    align-self: flex-start;
+    justify-self: end;
     width: 12rem;
-    margin: 0 auto;
-    align-self: start;
+
     @include for-size('phone-only') {
         align-self: end;
         width: auto;
+        justify-self: center;
+
     }
 }

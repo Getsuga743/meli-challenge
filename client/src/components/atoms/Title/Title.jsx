@@ -10,6 +10,12 @@ export const Title = ({
     color = 'dark',
     className,
 }) => {
+
+    if (!children) {
+        return null;
+    }
+
+
     const titleClass = classnames(className, {
         [styles.common]: true,
         [styles.black]: color === 'black',
@@ -19,10 +25,6 @@ export const Title = ({
         [styles.sizeLarge]: size === 'large',
         [styles.sizeMedium]: size === 'medium',
     });
-
-    if (!children) {
-        return null;
-    }
 
     if (type === 'h1') {
         return <h1 className={titleClass}>{children}</h1>;

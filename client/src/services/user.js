@@ -5,27 +5,14 @@ export const getUserData = async () => {
     return data;
 };
 
-export const getUserRestrictions = async (id) => {
-    const { data } = await api.get(`/users/${id}/restrictions`);
+export const getUserRestrictions = async (user) => {
+    const { data } = await api.get(`/users/${user.user_id}/restrictions`);
     return data;
 };
 
-export const getUserLevels = async (levelId) => {
-    const { data } = await api.get(`/levels/${levelId}`);
-    return data;
-};
+export const getUserLevel = async (user) => {
+    const { level } = user;
 
-export const getDetailsOfUser = async ({ id, levelId }) => {
-    const [userRestrictions, userLevels] = await Promise.all([
-        getUserRestrictions(id),
-        getUserLevels(levelId),
-    ]);
-    const responses = await Promise.all([
-        userRestrictions.json(),
-        userLevels.json(),
-    ]);
-    return {
-        userRestrictions: responses[0],
-        userLevels: responses[1],
-    };
+    const { data } = await api.get(`/levels/${level}`);
+    return data;
 };

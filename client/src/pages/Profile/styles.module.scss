@@ -10,7 +10,7 @@
 .sectionHeader {
     @include flex(row, space-between, center);
     width: 100%;
-    margin-bottom: 1rem;
+    margin: 2rem 0;
 }
 
 .sectionProducts {
@@ -22,6 +22,5 @@
 
 .paginationContainer {
     @include flex(column, center, center);
-
     margin-top: auto;
 }
