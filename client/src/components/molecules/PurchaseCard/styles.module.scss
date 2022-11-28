@@ -12,16 +12,16 @@
 .grid {
     display: grid;
     grid-template-columns: 10rem 2fr 1fr;
-    grid-template-rows: 10rem;
-    grid-template-areas: 'image text button';
+    grid-template-rows: 'auto';
+    grid-template-areas: 'text text button';
     padding: 2rem;
     width: 100%;
     @include for-size('phone-only') {
         max-width: 300px;
         margin: auto;
         grid-template-columns: 1fr;
-        grid-template-rows: 15rem auto 5rem;
-        grid-template-areas: 'image' 'text' 'button';
+        grid-template-rows: auto 5rem;
+        grid-template-areas: 'text' 'button';
     }
 }
 
@@ -38,19 +38,14 @@
     }
 }
 
-.image {
-    grid-area: image;
-}
-
 .text {
     grid-area: text;
-    margin-left: 1rem;
     @include flex(column, space-between, flex-start);
 
     @include for-size('phone-only') {
         margin: 2rem 0;
         text-align: center;
-        @include flex(column, space-between, center);
+        @include flex(column, flex-start, center);
     }
 }
 
@@ -65,6 +60,5 @@
         align-self: end;
         width: auto;
         justify-self: center;
-
     }
 }

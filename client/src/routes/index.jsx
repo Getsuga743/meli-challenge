@@ -11,7 +11,7 @@ export const Routes = () => {
                 path="/profile/purchases/:id"
                 component={PurchaseDetail}
             />
-            <Redirect to="/404" />
+            <Redirect to="/profile" />
         </Switch>
     );
 };

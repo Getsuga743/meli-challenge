@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Text, Title, Image } from 'components/atoms';
 import styles from './styles.module.scss';
 
-export const ProductDetail = () => {
+export const PurchaseDetailCard = () => {
     return (
         <>
             <Card className={styles.headerCard}>

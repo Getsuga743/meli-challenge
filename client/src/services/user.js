@@ -5,14 +5,14 @@ export const getUserData = async () => {
     return data;
 };
 
-export const getUserRestrictions = async (user) => {
-    const { data } = await api.get(`/users/${user.user_id}/restrictions`);
+export const getUserRestrictions = async (userId) => {
+    const { data } = await api.get(`/users/${userId}/restrictions`);
     return data;
 };
 
-export const getUserLevel = async (user) => {
-    const { level } = user;
-
-    const { data } = await api.get(`/levels/${level}`);
+export const getUserPurchases = async (userId, offset = 0, limit = 10) => {
+    const { data } = await api.get(
+        `/users/${userId}/purchases/?offset=${offset}&limit=${limit}`
+    );
     return data;
 };

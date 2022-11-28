@@ -6,15 +6,14 @@ import { Alert } from 'components/molecules';
 
 export const ProfileSection = () => {
     const { user, loading: userLoading, error: userError } = useUser();
-    
+    const userId = user?.id_usuario;
+
     return (
         <>
-            <ProfileCard
-                user={user}
-                isLoading={userLoading}
-                isError={userError}
-            />
-            <Alert user={user} />
+            <ProfileCard user={user} loading={userLoading} error={userError} />
+            <div className={styles.container}>
+                <Alert userId={userId} />
+            </div>
         </>
     );
 };

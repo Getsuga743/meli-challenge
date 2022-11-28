@@ -35,7 +35,7 @@ const useGetUserData = () => {
 
 export const useUserProvider = () => {
     const { user, loading, error } = useGetUserData();
-    
+
     return {
         user,
         loading,

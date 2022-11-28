@@ -10,11 +10,9 @@ export const Title = ({
     color = 'dark',
     className,
 }) => {
-
     if (!children) {
         return null;
     }
-
 
     const titleClass = classnames(className, {
         [styles.common]: true,

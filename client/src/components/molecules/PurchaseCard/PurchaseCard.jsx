@@ -1,18 +1,29 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Image, Title, Text, Button } from 'components/atoms';
+import { Title, Text, Button } from 'components/atoms';
 import styles from './styles.module.scss';
 import { Card } from 'components/atoms';
 
 // Listado de compras, con id de compra, título del ítem, precio, cantidad y fecha
 // de compra, y una forma para ver el detalle de esa compra
-export const ProductCard = () => {
+export const PurchaseCard = ({ purchase }) => {
+    const { id_compra, titulo, fecha, cantidad, precio, moneda } = purchase;
+
+    const formatedPrecio = new Intl.NumberFormat('es-AR', {
+        style: 'currency',
+        currency: moneda,
+    }).format(precio);
+
+    const formatedFecha = new Intl.DateTimeFormat('es-AR', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+    }).format(new Date(fecha));
+
     return (
         <Card className={styles.container}>
             <div className={styles.header}>
-                <Text type="span" color="dark" weight="bold">
-                    01/01/2021
-                </Text>
+                <Title size="medium">{titulo}</Title>
                 <Text
                     type="span"
                     size="xsmall"
@@ -20,25 +31,20 @@ export const ProductCard = () => {
                     weight="bold"
                     className="pt-2"
                 >
-                    #123456
+                    #{id_compra}
                 </Text>
             </div>
             <div className={styles.grid}>
-                <div className={styles.imageContainer}>
-                    <Image
-                        src={
-                            'https://http2.mlstatic.com/D_NQ_NP_969645-MLA46877067884_072021-V.webp'
-                        }
-                        size="fluid"
-                        variant="product"
-                    />
-                </div>
                 <div className={styles.text}>
-                    <Title size="large">Producto 1</Title>
-                    <Text size="small" weight="bold">
-                        $ 100
+                    <Text type="span" size="small" color="medium" weight="bold">
+                        {formatedPrecio}
                     </Text>
-                    <Text size="medium">cantidad: 1</Text>
+                    <Text type="span" color="medium" className="my-2">
+                        {formatedFecha}
+                    </Text>
+                    <Text type="span" size="small">
+                        {`${cantidad} ${cantidad > 1 ? 'unidades' : 'unidad'}`}
+                    </Text>
                 </div>
                 <div className={styles.button}>
                     <Button size="small" link="/profile/purchases/1">
@@ -52,6 +58,6 @@ export const ProductCard = () => {
     );
 };
 
-ProductCard.propTypes = {
+PurchaseCard.propTypes = {
     children: PropTypes.element,
 };

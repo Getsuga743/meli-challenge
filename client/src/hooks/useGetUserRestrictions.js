@@ -1,16 +1,15 @@
 import { useState, useEffect } from 'react';
 import { getUserRestrictions } from 'services/user';
 
-export const useGetUserRestrictions = (user) => {
+export const useGetUserRestrictions = (userId) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
     const [restrictions, setUserRestrictions] = useState(null);
-
     useEffect(() => {
-        if (user) {
+        if (userId) {
             const fetchUser = async () => {
                 try {
-                    const response = await getUserRestrictions(user);
+                    const response = await getUserRestrictions(userId);
                     setUserRestrictions(response);
                     setLoading(false);
                 } catch (error) {
@@ -19,7 +18,7 @@ export const useGetUserRestrictions = (user) => {
             };
             fetchUser();
         }
-    }, [user]);
+    }, [userId]);
 
     return { loading, error, restrictions, setUserRestrictions };
 };

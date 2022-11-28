@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProductDetail } from 'components/molecules';
+import { PurchaseDetailCard } from 'components/molecules';
 
 import styles from './styles.module.scss';
 import { Text } from 'components/atoms/';
@@ -12,7 +12,7 @@ export const PurchaseDetail = () => {
                 <Text className="px-2">{'>'}</Text>
                 <Text>Detalle de la compra</Text>
             </div>
-            <ProductDetail />
+            <PurchaseDetailCard />
         </>
     );
 };

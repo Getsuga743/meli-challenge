@@ -1,5 +1,5 @@
 import { Alert } from './Alert/Alert';
-import { ProductCard } from './ProductCard/ProductCard';
+import { PurchaseCard } from './PurchaseCard/PurchaseCard';
 import { ProfileCard } from './ProfileCard/ProfileCard';
-import { ProductDetail } from './ProductDetail/ProductDetail';
-export { ProductCard, ProfileCard, Alert, ProductDetail };
+import { PurchaseDetailCard } from './PurchaseDetailCard/PurchaseDetailCard';
+export { PurchaseCard, ProfileCard, Alert, PurchaseDetailCard };

@@ -1,0 +1,19 @@
+@use 'styles/mixins' as *;
+
+.sectionHeader {
+    @include flex(row, space-between, center);
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.sectionProducts {
+    @include flex(column, flex-start, center);
+    width: 100%;
+    margin-bottom: 1rem;
+    flex: 1;
+}
+
+.paginationContainer {
+    @include flex(column, center, center);
+    margin-top: auto;
+}

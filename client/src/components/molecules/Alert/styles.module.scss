@@ -3,28 +3,24 @@
 .notification {
     @include flex(row, center, center);
     max-width: 300px;
-    padding: 0.1rem;
     border-radius: 0.5rem;
     > span {
         margin: 0 1rem;
         @include col('gray-d');
         text-align: justify;
+        flex-wrap: nowrap;
     }
-    
+
     button {
-        border:none;
+        border: none;
         background-color: transparent;
         color: white;
-        padding:1rem;
+        padding: 1rem;
         cursor: pointer;
+        font-weight: 600;
     }
 }
 
 .warning {
     background-color: #ff9966;
-}
-
-.container {
-    margin-top: 1rem;
-    max-width: 300px;
 }

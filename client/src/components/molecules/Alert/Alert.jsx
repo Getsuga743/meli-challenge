@@ -26,8 +26,8 @@ export const AlertItem = ({ alert, deleteAlert }) => {
     });
     return (
         <Card className={alertClass}>
+            {emojiDictionary[tipo]}
             <span type="span" size="small">
-                {emojiDictionary[tipo]}
                 {mensaje}
             </span>
             <button
@@ -49,8 +49,9 @@ AlertItem.propTypes = {
     handleDelete: PropTypes.func,
 };
 
-export const Alert = ({ user }) => {
-    const { restrictions, setUserRestrictions } = useGetUserRestrictions(user);
+export const Alert = ({ userId }) => {
+    const { restrictions, setUserRestrictions } =
+        useGetUserRestrictions(userId);
     const deleteAlert = (restriction) => {
         setUserRestrictions(
             restrictions.filter((r) => r.mensaje !== restriction.mensaje)
@@ -71,7 +72,5 @@ export const Alert = ({ user }) => {
 };
 
 Alert.propTypes = {
-    user: PropTypes.shape({
-        user_id: PropTypes.number,
-    }),
+    userId: PropTypes.number,
 };

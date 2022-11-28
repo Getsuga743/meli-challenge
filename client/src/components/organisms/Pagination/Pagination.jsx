@@ -4,34 +4,24 @@ import { Text } from 'components/atoms';
 import classNames from 'classnames';
 import { Button } from '../../atoms';
 
-export const Pagination = (props) => {
+export const Pagination = ({
+    loadNextPage,
+    hasMore,
+    loadPreviousPage,
+    page,
+}) => {
     return (
         <nav className={styles.container}>
             <ul className={styles.list}>
                 <li className={classNames(styles.item, styles.sideButton)}>
-                    <Button variant="outlined">
+                    <Button variant="outlined" onClick={loadPreviousPage}>
                         <Text variant="primary" color="dark">
                             Anterior
                         </Text>
                     </Button>
                 </li>
-                <li className={classNames(styles.item, styles.pageButton)}>
-                    <Button variant="link" link="" size="medium">
-                        <Text color="dark">1</Text>
-                    </Button>
-                </li>
-                <li className={classNames(styles.item, styles.pageButton)}>
-                    <Button variant="link" link="a" size="medium">
-                        2
-                    </Button>
-                </li>
-                <li className={classNames(styles.item, styles.pageButton)}>
-                    <Button variant="link" link="a" size="medium">
-                        3
-                    </Button>
-                </li>
                 <li className={classNames(styles.item, styles.sideButton)}>
-                    <Button variant="outlined" link="">
+                    <Button variant="outlined" link="" onClick={loadNextPage}>
                         <Text color="dark">Siguiente</Text>
                     </Button>
                 </li>
