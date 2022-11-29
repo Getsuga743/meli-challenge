@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 module.exports = {
-    plugins: ['jest,react'],
+    plugins: ['react'],
     root: true,
     parserOptions: {
         ecmaVersion: 12,
@@ -10,7 +10,7 @@ module.exports = {
     env: {
         es2021: true,
         node: true,
-        'jest/globals': true,
+        browser: true,
     },
     rules: {
         'no-console': 'error',

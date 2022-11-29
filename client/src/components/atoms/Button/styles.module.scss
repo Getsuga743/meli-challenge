@@ -1,0 +1,64 @@
+@use 'styles/mixins' as *;
+
+.button {
+    @include flex(row, center, center);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    font-size: 1.5rem;
+    @include for-size('phone-only') {
+        padding: 10px;
+    }
+}
+
+.primary {
+    @include bg('blue');
+
+    &:hover {
+        @include bg('dark-blue');
+    }
+}
+
+.link {
+    &:hover {
+        text-decoration: underline;
+        color: 'inherit';
+    }
+}
+
+.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.outlined {
+    background-color: transparent;
+    @include brColor('gray-m');
+    border-width: 1px;
+    border-style: solid;
+
+    &:hover {
+        @include bg('light-blue');
+    }
+}
+
+.full {
+    width: 100%;
+}
+
+.xsmall {
+    padding: 0.5rem 1rem;
+}
+
+.small {
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+.medium {
+    padding: 10px 20px;
+    font-size: 1.5rem;
+}

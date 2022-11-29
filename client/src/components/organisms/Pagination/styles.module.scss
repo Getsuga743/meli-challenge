@@ -1,0 +1,43 @@
+@use 'styles/mixins' as *;
+
+.container {
+    @include flex(row, center, center);
+    margin-top: 20px;
+}
+
+.list {
+    @include flex(row, center, center);
+    height: 50px;
+}
+
+.item {
+    @include flex(row, center, center);
+    @include col('gray-d');
+    gap: 0.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    width: 3rem;
+}
+
+.active {
+    @include bg('white');
+    @include brColor('gray-m');
+
+    &:hover {
+        @include bg('light-blue');
+    }
+}
+
+.pageButton {
+    &:hover {
+        @include bg('light-blue');
+    }
+}
+
+.sideButton {
+    width: fit-content;
+    margin: 0 2rem;
+    @include for-size('phone-only') {
+        margin: 0;
+    }
+}

@@ -1,14 +1,28 @@
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
+
 module.exports = {
     entry: './src/index.js',
     resolve: {
-        extensions: ['.js', '.jsx'],
+        alias: {
+            components: path.resolve(__dirname, 'src/components'),
+            pages: path.resolve(__dirname, 'src/pages/'),
+            styles: path.resolve(__dirname, 'src/styles/'),
+            utils: path.resolve(__dirname, 'src/utils/'),
+            services: path.resolve(__dirname, 'src/services/'),
+            hooks: path.resolve(__dirname, 'src/hooks/'),
+            contexts: path.resolve(__dirname, 'src/contexts/'),
+            assets: path.resolve(__dirname, 'src/assets/'),
+        },
+        extensions: ['.scss', '.js', '.jsx'],
     },
     output: {
         path: path.join(__dirname, '/dist'),
-        filename: 'bundle.js',
+        filename: '[name].[hash:8].js',
+        sourceMapFilename: '[name].[hash:8].map',
+        chunkFilename: '[id].[hash:8].js',
         publicPath: '/',
         assetModuleFilename: 'assets/img/[hash][ext][query]',
     },
@@ -18,6 +32,7 @@ module.exports = {
             favicon: './src/assets/images/favicon.svg',
         }),
         new MiniCssExtractPlugin(),
+        new Dotenv(),
     ],
     module: {
         rules: [
@@ -68,15 +83,12 @@ module.exports = {
     },
     devServer: {
         hot: true,
-        port: process.env.PORT,
-        open: true,
+        port: 8080,
         historyApiFallback: true,
-        historyApiFallback: {
-            disableDotRule: true,
-        },
-        proxy: {
-            '/api': 'http://localhost:8000',
-            changeOrigin: true,
+    },
+    optimization: {
+        splitChunks: {
+            chunks: 'all',
         },
     },
 };

@@ -1,0 +1,23 @@
+@use 'styles/mixins' as *;
+@use 'styles/variables' as *;
+
+.root {
+    @include flex(row, space-between, center);
+    @include bg('yellow');
+    height: $navbar-height;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+.container {
+    @include flex(row, space-between, center);
+    @include container(1200px);
+}
+
+.logo {
+    width: 13.4rem;
+    height: 3.5rem;
+    background-image: url('assets/images/logo__large.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}

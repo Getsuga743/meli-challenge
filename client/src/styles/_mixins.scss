@@ -1,21 +1,48 @@
+@use 'sass:map';
+
+@use 'variables' as v;
+
+@mixin flex($direction: row, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin container($width: 1200px) {
+    margin: auto;
+    max-width: $width;
+    padding: 0 2rem;
+}
+
+@mixin col($color) {
+    color: map.get(v.$colors, $color);
+}
+
+@mixin bg($color) {
+    background-color: map.get(v.$colors, $color);
+}
+
+@mixin brColor($color) {
+    border-color: map.get(v.$colors, $color);
+}
+
 @mixin for-size($size) {
-    @if $size == phone-only {
-        @media (max-width: 599px) {
+    @if $size == 'phone-only' {
+        @media (max-width: 500px) {
             @content;
         }
-    } @else if $size == tablet {
+    } @else if $size == 'tablet' {
         @media (min-width: 600px) {
             @content;
         }
-    } @else if $size == desktop-up {
+    } @else if $size == 'desktop-up' {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    } @else if $size == 'desktop-down' {
         @media (min-width: 1200px) {
             @content;
         }
     }
-}
-
-@include flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }

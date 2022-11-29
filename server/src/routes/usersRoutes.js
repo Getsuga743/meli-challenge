@@ -12,9 +12,24 @@ function userRoutes(app) {
 
     router.get(
         '/:userId/purchases',
-        validationHandler(schemas.userId, 'param'),
+        validationHandler({ userId: schemas.userId }, 'params'),
         validationHandler(schemas.querySchema, 'query'),
         userController.getUserPurchases
+    );
+
+    router.get(
+        '/:userId/purchases/:offsetId',
+        validationHandler(
+            { userId: schemas.userId, offsetId: schemas.offsetId },
+            'params'
+        ),
+        userController.getUserPurchaseByOffset
+    );
+
+    router.get(
+        '/:userId/restrictions',
+        validationHandler({ userId: schemas.userId }, 'params'),
+        userController.getUserRestrictions
     );
 }
 

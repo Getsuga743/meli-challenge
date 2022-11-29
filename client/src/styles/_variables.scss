@@ -1,15 +1,29 @@
-$light-yellow: #fff159;
+$yellow: #fff159;
+$gray-d: #333333;
+$gray-m: #999999;
+$gray-l: #eeeeee;
+$gray-bg: #ededed;
 
-$grey: #333;
-
-$light-grey: #eee;
-$light-grey: #ededed;
-
-$dark-blue: #1f4e96;
-$medium-blue: #3483fa;
+$blue: #3483fa;
+$dark-blue: #2968c8;
 $light-blue: rgba(65, 137, 230, 0.15);
+$white: #fefefe;
+$black: rgba(0, 0, 0, 0.9);
 
-$white: #fff;
-$black: #000;
+$colors: (
+    'yellow': $yellow,
+    'gray-d': $gray-d,
+    'gray-m': $gray-m,
+    'gray-l': $gray-l,
+    'gray-bg': $gray-bg,
+    'blue': $blue,
+    'dark-blue': $dark-blue,
+    'light-blue': $light-blue,
+    'white': $white,
+    'black': $black,
+);
 
-$font: 'Roboto', sans-serif; ;
+$font: 'Roboto', sans-serif;
+
+$navbar-height: 5rem;
+$footer-height: 5rem;

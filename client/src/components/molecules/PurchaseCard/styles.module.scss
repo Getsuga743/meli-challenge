@@ -1,0 +1,67 @@
+@use 'styles/mixins' as *;
+
+.container {
+    @include flex(column, center, center);
+    width: 100%;
+    min-height: 16.6rem;
+    margin-bottom: 2rem;
+    @include for-size('phone-only') {
+        @include flex(column, flex-start, flex-start);
+        height: auto;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 10rem 2fr 1fr;
+    grid-template-rows: 'auto';
+    grid-template-areas: 'text text button';
+    padding: 2rem;
+    width: 100%;
+    @include for-size('phone-only') {
+        max-width: 300px;
+        margin: auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 5rem;
+        grid-template-areas: 'text' 'button';
+    }
+}
+
+.header {
+    @include flex(column, flex-start, flex-start);
+    width: 100%;
+    @include brColor('gray-l');
+    border-style: solid;
+    border-bottom-width: 1px;
+    padding: 2rem 2rem 1rem 2rem;
+    @include for-size('phone-only') {
+        @include flex(column, center, center);
+        padding: 1rem;
+        > * {
+            text-align: center;
+        }
+    }
+}
+
+.text {
+    grid-area: text;
+    @include flex(column, space-between, flex-start);
+
+    @include for-size('phone-only') {
+        @include flex(column, flex-start, center);
+    }
+}
+
+.button {
+    padding-bottom: 1rem;
+    grid-area: button;
+    align-self: flex-start;
+    justify-self: end;
+    width: 12rem;
+
+    @include for-size('phone-only') {
+        align-self: end;
+        width: auto;
+        justify-self: center;
+    }
+}

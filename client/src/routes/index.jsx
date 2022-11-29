@@ -1,10 +1,19 @@
-import { Route, Switch } from 'react-router-dom';
-import Home from '../pages/Home';
+import React from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import { Profile, PurchaseDetail } from 'pages';
 
 export const Routes = () => {
     return (
-        <Switch>
-            <Route exact path="/home" component={Home} />
-        </Switch>
+        <React.Suspense fallback={<>..</>}>
+            <Switch>
+                <Route exact path="/profile" component={Profile} />
+                <Route
+                    exact
+                    path="/profile/purchases/:purchaseId"
+                    component={PurchaseDetail}
+                />
+                <Redirect to="/profile" />
+            </Switch>
+        </React.Suspense>
     );
 };
