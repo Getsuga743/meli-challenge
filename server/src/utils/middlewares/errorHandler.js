@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 const config = require('../../../config');
 
 function errorLogger(error, request, response, next) {
@@ -14,21 +13,18 @@ function errorResponder(error, request, response, next) {
 
     if (config.dev) {
         response.json({
-            data: error.message,
-            status: 'fail',
+            message: error.message,
             stack: error.stack,
         });
     }
-    response.json({
-        data: error.message,
-        status: 'fail',
-    });
+    response.json({ message: error.message });
 }
-
-function invalidPathHandler(request, response, next) {
+function invalidPathHandler(request, response) {
     const error = new Error('Invalid path');
     response.status(404);
-    response.send({ status: 'fail', data: error.message });
+    response.json({
+        message: error.message,
+    });
 }
 
 module.exports = {
