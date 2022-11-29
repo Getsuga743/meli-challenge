@@ -13,7 +13,7 @@ export const useGetUserRestrictions = (userId) => {
                     setUserRestrictions(response);
                     setLoading(false);
                 } catch (error) {
-                    setError(error);
+                    setError(true);
                 }
             };
             fetchUser();

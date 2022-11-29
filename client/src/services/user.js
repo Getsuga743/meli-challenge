@@ -16,3 +16,8 @@ export const getUserPurchases = async (userId, offset = 0, limit = 10) => {
     );
     return data;
 };
+
+export const getPurchaseDetail = async (userId, offset) => {
+    const { data } = await api.get(`/users/${userId}/purchases/${offset}`);
+    return data;
+};

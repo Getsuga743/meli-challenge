@@ -7,7 +7,7 @@
 
 .list {
     @include flex(row, center, center);
-    margin: 0 1rem;
+    height: 50px;
 }
 
 .item {
@@ -40,9 +40,4 @@
     @include for-size('phone-only') {
         margin: 0;
     }
-}
-
-.disabled {
-    @include bg('gray-l');
-    cursor: not-allowed;
 }

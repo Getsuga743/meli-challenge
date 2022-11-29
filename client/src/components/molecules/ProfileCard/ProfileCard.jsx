@@ -25,7 +25,11 @@ export const ProfileCard = ({ user, loading, error }) => {
     }
 
     if (error) {
-        return <div>{error}</div>;
+        return (
+            <div>
+                <Text>Hubo un error al cargar los datos</Text>
+            </div>
+        );
     }
 
     const { imagen, nombre_completo, nivel_descripcion } = user;

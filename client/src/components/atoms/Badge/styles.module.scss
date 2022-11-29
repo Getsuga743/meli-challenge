@@ -1,0 +1,16 @@
+.badge {
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-left: 1rem;
+    > span {
+        text-transform: capitalize;
+    }
+}
+
+.succes {
+    background-color: #4caf50;
+}
+
+.failure {
+    background-color: #f44336;
+}

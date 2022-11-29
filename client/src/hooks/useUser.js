@@ -8,10 +8,23 @@ export const useUser = () => {
     return useContext(userContext);
 };
 
+export const UserProvider = ({ children }) => {
+    const values = useUserProvider();
+
+    return (
+        <userContext.Provider value={values}>{children}</userContext.Provider>
+    );
+};
+
+UserProvider.propTypes = {
+    children: PropTypes.element,
+};
+
 const useGetUserData = () => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+
     useEffect(() => {
         const getUser = async () => {
             try {
@@ -41,18 +54,4 @@ export const useUserProvider = () => {
         loading,
         error,
     };
-};
-
-export const UserProvider = ({ children }) => {
-    const { user, loading, error } = useUserProvider();
-
-    return (
-        <userContext.Provider value={{ user, loading, error }}>
-            {children}
-        </userContext.Provider>
-    );
-};
-
-UserProvider.propTypes = {
-    children: PropTypes.element,
 };

@@ -6,7 +6,7 @@ export const Navbar = () => {
         <header className={styles.root}>
             <nav className={styles.container}>
                 <div>
-                    <img className={styles.logo} />
+                    <div className={styles.logo} />
                 </div>
             </nav>
         </header>

@@ -3,9 +3,11 @@
 .container {
     @include flex(column, center, center);
     width: 100%;
+    min-height: 16.6rem;
     margin-bottom: 2rem;
     @include for-size('phone-only') {
         @include flex(column, flex-start, flex-start);
+        height: auto;
     }
 }
 
@@ -35,6 +37,9 @@
     @include for-size('phone-only') {
         @include flex(column, center, center);
         padding: 1rem;
+        > * {
+            text-align: center;
+        }
     }
 }
 
@@ -43,8 +48,6 @@
     @include flex(column, space-between, flex-start);
 
     @include for-size('phone-only') {
-        margin: 2rem 0;
-        text-align: center;
         @include flex(column, flex-start, center);
     }
 }

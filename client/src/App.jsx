@@ -4,7 +4,7 @@ import { Layout as GeneralLayout } from 'components/organisms';
 import { UserProvider } from 'hooks/useUser';
 import { Routes } from './routes';
 import { BrowserRouter } from 'react-router-dom';
-
+console.log(process.env.PORT);
 const App = () => {
     return (
         <BrowserRouter>

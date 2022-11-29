@@ -18,7 +18,6 @@ export const Text = ({
     const textClass = classnames(className, {
         [styles.common]: true,
         [styles.dark]: color === 'dark',
-        [styles.dark]: color === 'dark',
         [styles.medium]: color === 'medium',
         [styles.light]: color === 'light',
         [styles.sizeLarge]: size === 'large',

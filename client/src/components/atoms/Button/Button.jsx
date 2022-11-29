@@ -19,8 +19,10 @@ export const Button = ({
         }
     };
     let buttonClass;
+
     if (variant !== 'none') {
         buttonClass = classnames(className, {
+            [styles.disabled]: props.disabled,
             [styles.xsmall]: size === 'xsmall',
             [styles.small]: size === 'small',
             [styles.medium]: size === 'medium',
@@ -54,4 +56,5 @@ Button.propTypes = {
     onClick: PropTypes.func,
     size: PropTypes.string,
     variant: PropTypes.string,
+    disabled: PropTypes.bool,
 };

@@ -1,16 +1,11 @@
 import { useState } from 'react';
 
-export const usePagination = (
-    initialPage,
-    initialPageSize,
-    loadMore,
-    hasMore
-) => {
+export const usePagination = (initialPage, pageSize, loadMore, total) => {
     const [page, setPage] = useState(initialPage);
-    const [pageSize, setPageSize] = useState(initialPageSize);
 
+    const canLoadMore = page * pageSize < total;
     const loadNextPage = () => {
-        if (hasMore) {
+        if (canLoadMore) {
             setPage(page + 1);
             loadMore();
         }
@@ -22,10 +17,16 @@ export const usePagination = (
         }
     };
 
+    const indexOfLastItem = page * pageSize;
+    const indexOfFirstItem = indexOfLastItem - pageSize;
+
     return {
         page,
         pageSize,
         loadNextPage,
         loadPreviousPage,
+        indexOfLastItem,
+        indexOfFirstItem,
+        canLoadMore,
     };
 };

@@ -20,20 +20,20 @@
 }
 
 .skeletonSmall {
-    height: 1rem;
+    min-height: 1rem;
     width: 5rem;
 }
 .skeletonMedium {
-    height: 2rem;
+    min-height: 2rem;
     width: 10rem;
 }
 .skeletonLarge {
-    height: 3rem;
+    min-height: 3rem;
     width: 15rem;
 }
 
 .skeletonAvatar {
-    height: 5rem;
+    min-height: 5rem;
     width: 5rem;
     border-radius: 50%;
 }

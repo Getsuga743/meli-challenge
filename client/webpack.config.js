@@ -1,6 +1,7 @@
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
     entry: './src/index.js',
@@ -31,6 +32,7 @@ module.exports = {
             favicon: './src/assets/images/favicon.svg',
         }),
         new MiniCssExtractPlugin(),
+        new Dotenv(),
     ],
     module: {
         rules: [
@@ -81,11 +83,8 @@ module.exports = {
     },
     devServer: {
         hot: true,
-        port: process.env.PORT,
-        open: true,
-        historyApiFallback: {
-            disableDotRule: true,
-        },
+        port: 8080,
+        historyApiFallback: true,
     },
     optimization: {
         splitChunks: {

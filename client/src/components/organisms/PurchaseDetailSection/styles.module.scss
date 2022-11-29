@@ -31,7 +31,7 @@
     @include flex(row, flex-start, flex-end);
     width: 100%;
     @include for-size('phone-only') {
-        @include flex(row, center, center);
+        @include flex(column, center, center);
     }
 }
 
@@ -44,6 +44,12 @@
     border-bottom-width: 1px;
     border-style: solid;
     @include brColor('gray-m');
+
+    @include for-size('phone-only') {
+        @include flex(row, center, center);
+        margin-right: 0;
+        padding: 1rem;
+    }
 }
 
 .titleSection {
