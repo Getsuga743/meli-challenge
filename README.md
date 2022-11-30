@@ -34,3 +34,5 @@ Pese a implementar webpack, no implementé una configuración de ssr, consideré
 No estoy contento con la estructura final de los endpoints, eso es algo que me gustaría revisar en mayor profundidad. Opté por dividir las request en el flujo de /profile , tratando de cargar los datos del user + nivel primero, para así con los datos del user poder obtener el listado de compras, y las restricciones.
 Para el detalle de la compra, opté por hacer una sola request.
 
+
+
